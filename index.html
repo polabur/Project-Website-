@@ -1,18 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gryphline Game</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
+    <link rel="stylesheet" href="styles2.css">
+    <script defer src="scripts2.js"></script>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <img src="logo.png" alt="Gryphline Logo" id="loading-logo">
-    </div>
-
-    <header>
+    <aside class="sidebar">
+        <img src="logo1.png" alt="Logo" class="sidebar-logo" allign="center">
         <nav>
             <ul>
                 <li><a href="#homepage">Home</a></li>
@@ -21,47 +18,48 @@
                 <li><a href="#gameplay_intro">Gameplay</a></li>
             </ul>
         </nav>
-    </header>
+    </aside>
 
-    <section id="homepage">
-        <h1>Welcome to GAME TITLE</h1>
-        <p> put some icon here</p>.</p>
-    </section>
+    <div class="main-content">
+        <section id="homepage" class="section">
+            <img src="logo.png" alt="Logo" align="center">
+            <h1>Introduction</h1>
+            <p>Description.</p>
+        </section>
 
-    <section id="character_intro">
-        <h2>Character Introduction</h2>
-        <p>Meet the diverse characters of our game.</p>
-
-        <!-- Character Selection Area -->
-        <div class="character-selection">
-            <div class="character-card">
-                <img src="c1.png" alt="Character 1">
-                <p>Character 1</p>
+        <section id="character_intro" class="section">
+            <h2>Character Introduction</h2>
+            <div class="character-layout">
+                <aside class="character-tabs">
+                    <button class="tab-link" data-name="Character 1" data-description="Description for Character 1" data-image="c1.png">Character 1</button>
+                    <button class="tab-link" data-name="Character 2" data-description="Description for Character 2" data-image="c2.png">Character 2</button>
+                    <button class="tab-link" data-name="Character 3" data-description="Description for Character 3" data-image="c3.png">Character 3</button>
+                    <button class="tab-link" data-name="Character 4" data-description="Description for Character 4" data-image="c4.png">Character 4</button>
+                    <button class="tab-link" data-name="Character 5" data-description="Description for Character 5" data-image="c5.png">Character 5</button>
+                    <!-- Add more character tabs as needed -->
+                </aside>
+                <div class="character-content">
+                    <img src="logo.png" alt="Character 1" id="main-character-image">
+                    <h3 id="character-name">Description</h3>
+                    <p id="character-description">Description</p>
+                </div>
             </div>
-            <div class="character-card">
-                <img src="c2.png" alt="Character 2">
-                <p>Character 2</p>
-            </div>
-            <div class="character-card">
-                <img src="c3.png" alt="Character 3">
-                <p>Character 3</p>
-            </div>
-            <!-- Add more character cards as needed -->
-        </div>
-    </section>
+        </section>
 
-    <section id="world_intro">
-        <h2>World Introduction</h2>
-        <p>Explore the vast and immersive world.</p>
-    </section>
+        <section id="world_intro" class="section">
+            <h2>World Introduction</h2>
+            <p>Explore the vast and immersive world.</p>
+        </section>
 
-    <section id="gameplay_intro">
-        <h2>Gameplay Introduction</h2>
-        <p>Learn about the exciting gameplay mechanics.</p>
-    </section>
+        <section id="gameplay_intro" class="section">
+            <h2>Gameplay Introduction</h2>
+            <p>Learn about the exciting gameplay mechanics.</p>
+        </section>
 
-    <footer>
-        <p>&copy; Web Designer: John Fhilip Endrano.</p>
-    </footer>
+        <footer>
+            <p>&copy; FOOTER INFORMATION</p>
+        </footer>
+    </div>
 </body>
 </html>
+
