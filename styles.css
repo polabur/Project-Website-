@@ -3,72 +3,76 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #000; /* Fallback color */
-}
-
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
+    background-color: #3a3a3a; /* Fallback color */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    opacity: 1;
-    transition: opacity 1s ease-out;
 }
 
-#loading-logo {
-    max-width: 200px;
-}
-
-body.loaded #loading-screen {
-    opacity: 0;
-    pointer-events: none;
-}
-
-header {
+.sidebar {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 1em 0;
+    width: 200px;
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 1000;
+    bottom: 0;
+    overflow-y: auto;
 }
 
-nav ul {
+.sidebar nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1em;
+.sidebar nav ul li {
+    margin: 1em 0;
 }
 
-nav ul li a {
+.sidebar nav ul li a {
     color: white;
     text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    transition: background 0.2s;
 }
 
-section {
+.sidebar nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
+    margin-left: 200px;
+    padding: 1em;
+    width: calc(100% - 200px);
+}
+
+.section {
     padding: 5em 2em; /* Added padding to accommodate fixed header */
     text-align: center;
     min-height: 100vh; /* Ensure each section covers the full viewport height */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-section:nth-child(odd) {
-    background-color: #f4f4f4;
+#homepage {
+    background-color: #ff9999; /* Example color */
 }
 
-section:nth-child(even) {
-    background-color: #e2e2e2;
+#character_intro {
+    background-color: #99ccff; /* Example color */
+}
+
+#world_intro {
+    background-color: #99ff99; /* Example color */
+}
+
+#gameplay_intro {
+    background-color: #ffcc99; /* Example color */
+}
+
+.section.visible {
+    opacity: 1;
 }
 
 footer {
@@ -78,41 +82,60 @@ footer {
     padding: 1em 0;
 }
 
-/* Character Selection Area */
-.character-selection {
+/* Character Layout */
+.character-layout {
     display: flex;
-    flex-wrap: wrap;
+    gap: 2em;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.character-tabs {
+    display: flex;
+    flex-direction: column;
     gap: 1em;
-}
-
-.character-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
-    transition: transform 0.2s;
-}
-
-.character-card img {
-    width: 100%;
-    height: auto;
-}
-
-.character-card p {
-    margin: 0;
+    background: white;
     padding: 1em;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.character-card:hover {
-    transform: scale(1.05);
+.tab-link {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.character-card.selected {
-    border: 2px solid #00f;
-    transform: scale(1.1);
+.tab-link:hover,
+.tab-link.active {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.character-content {
+    flex: 1;
+    text-align: center;
+    background: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.character-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.character-content h3 {
+    margin-top: 1em;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
